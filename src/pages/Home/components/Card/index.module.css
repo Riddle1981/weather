@@ -1,0 +1,72 @@
+.container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 100px;
+}
+
+.card {
+  position: relative;
+  width: 230px;
+  height: 247px;
+  /* margin-top: 200px; */
+  background: #fbfbfb;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+}
+.icon {
+  position: absolute;
+  top: -51px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 122px;
+  height: 120px;
+}
+.icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.button {
+  position: absolute;
+  bottom: -24px;
+  width: 163px;
+  height: 48px;
+  line-height: 48px;
+  vertical-align: middle;
+  left: 50%;
+  transform: translate(-50%);
+  background: #5e4fc1;
+  border-radius: 18px;
+  align-items: center;
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+}
+.info {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.infoBox {
+  height: 34px;
+  width: 163px;
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  /* line-height: 22px; */
+  /* identical to box height */
+  color: #fff;
+}
+.infoLeft {
+  float: left;
+}
+.infoRight {
+  float: right;
+}
