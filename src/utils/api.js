@@ -45,34 +45,8 @@ instance.interceptors.response.use(res => {
   // 数据不存在进行空数据错误抛出，可在参数中获取完整请求信息
   // 数据状态不为1时，data为提示信息则返回data，否则抛出网络异常错误
   if (res.status === 200) {
-    const { stat, data } = res.data
-    let resData = data
-    if (stat) {
-      if (!data) {
-        return Promise.reject({
-          msg: '暂无数据，请稍后再试～',
-          res
-        })
-      } else if (typeof data === 'string' && /{/.test(data)) {
-        try {
-          // 只将请求结果的data字段返回(JSON格式处理)
-          resData = JSON.parse(data)
-        } catch (e) {
-          resData = data
-        }
-      } else {
-        resData = res.data
-      }
-    } else {
-      const info = data && typeof data === 'string'
-        ? data
-        : '网络异常，请稍后再试～'
-      return Promise.reject({
-        msg: info,
-        res
-      })
-    }
-    return resData
+    console.log(res)
+    return res.data
   }
 }, errorHandler)
 

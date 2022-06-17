@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ResponsiveGrid } from '@alifd/next';
 import Card from './components/Card';
-import styles from './index.module.css';
+import styles from './index.module.less';
 import store from '@/pages/Home/store';
 
 const Home = () => {
