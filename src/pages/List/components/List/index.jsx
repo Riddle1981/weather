@@ -8,7 +8,7 @@ const List = () => {
   function renderWeek() {
     return state?.weekList?.map((x) => {
       return (
-        <div className={styles.weekBox}>
+        <div className={styles.weekBox} key={x.week}>
           <div className={styles.week}>{x.week}</div>
           <div className={styles.wea}>
             <img src={`https://riddle1981.github.io/weather/build/icon/${state.wea_img}l.png`} alt="" />

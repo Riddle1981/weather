@@ -28,7 +28,7 @@ export default {
     hours: []
   },
   reducers: {
-    updateWeather(prevState, payload={}) {
+    updateWeather(prevState, payload = {}) {
       let { tem, wea, win, wea_img, update_time, hours } = payload
       // let { air, city, tem, wea, win, wea_img, update_time, hours} = payload
       prevState = Object.assign(prevState, payload)
@@ -44,7 +44,7 @@ export default {
       prevState.tem = tem.replace('℃', '')
       // console.log(prevState, 'payload')
     },
-    updateSeven(prevState, payload={}) {
+    updateSeven(prevState, payload = {}) {
       let data = payload?.data?.map(x => {
         return {
           tem: x.tem,
@@ -60,13 +60,13 @@ export default {
   effects: (dispatch) => ({
     getSeven() {
       let data = localStorage.getItem('weatherData')
-      if (data) {
-        data = JSON.parse(data)
-        console.log('storage', data)
-        dispatch.list.updateWeather(data.data?.[0])
-        dispatch.list.updateSeven(data)
-        // return
-      }
+      // if (data) {
+      //   data = JSON.parse(data)
+      //   console.log('storage', data)
+      //   dispatch.list.updateWeather(data.data?.[0])
+      //   dispatch.list.updateSeven(data)
+      //   return
+      // }
       axios
         .get('https://yiketianqi.com/api', {
           params: {
@@ -77,11 +77,16 @@ export default {
             version: 'v1'
           },
         })
-        .then((res) => {
-          localStorage.setItem('weatherData', JSON.stringify(res))
-          dispatch.list.updateWeather(res.data?.[0])
-          dispatch.list.updateSeven(res)
-        });
+        .then(
+          (res) => {
+            localStorage.setItem('weatherData', JSON.stringify(res))
+            dispatch.list.updateWeather(res.data?.[0])
+            dispatch.list.updateSeven(res)
+          },
+          err => {
+            console.log(err, 'get list')
+          }
+        );
     }
   })
 }

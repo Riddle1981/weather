@@ -1,6 +1,7 @@
 {
   "postcssrc": true,
   "publicPath": "./",
+  "pwa": true,
   "plugins": [
     [
       "build-plugin-moment-locales",
