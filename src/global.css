@@ -2,7 +2,6 @@
 @import '@alifd/theme-design-pro/dist/next.var.css';
 
 html, body {
-  -webkit-font-smoothing: antialiased;
   max-width: 750px;
   box-sizing: border-box;
 }
