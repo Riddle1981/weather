@@ -12,7 +12,6 @@ const Card = () => {
   useEffect(() => {
     let date = new Date()
     let hour = date.getHours()
-    // let label = hour >= 12 ? hour + 'pm' : hour + 'am'
     let timeText = hour > 12 ? hour - 12 + 'pm' : hour + 'am'
     timeDispatcher({
       num: hour,
@@ -47,7 +46,7 @@ const Card = () => {
             <div className={styles.cloud}>{state.win}</div>
           </div>
         </div>
-        <div className={styles.button}></div>
+        <div className={styles.button}>详情</div>
       </div>
       <div className={styles.info}>
         <div className={styles.infoBox}>

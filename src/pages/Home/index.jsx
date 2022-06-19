@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { ResponsiveGrid } from '@alifd/next';
 import Card from './components/Card';
 import styles from './index.module.less';
-import store from '@/pages/Home/store';
+// import store from '@/store';
 
 const Home = () => {
-  const [state, stateDispatcher] = store.useModel('card');
+  // const [state, stateDispatcher] = store.useModel('card');
 
   return (
     <div className={styles.homeContainer}>

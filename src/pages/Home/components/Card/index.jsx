@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@alifd/next';
 import styles from './index.module.less';
-import store from '@/pages/Home/store';
+import store from '@/store';
+const { Provider } = store;
 
 const Card = () => {
   const [state, stateDispatcher] = store.useModel('card');
@@ -12,7 +13,7 @@ const Card = () => {
   useEffect(() => {
     let date = new Date()
     let hour = date.getHours()
-    let timeText = hour >= 12 ? hour + 'pm' : hour + 'am'
+    let timeText = hour > 12 ? hour - 12 + 'pm' : hour + 'am'
     timeDispatcher({
       num: hour,
       timeText
@@ -67,4 +68,10 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default () => {
+  return (
+    <Provider>
+      <Card />
+    </Provider>
+  );
+};
