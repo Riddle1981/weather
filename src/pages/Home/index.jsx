@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div className={styles.homeContainer}>
       <div className={styles.logo}>
-        <img src="/public/icon/logo.png" alt="" />
+        <img src="https://riddle1981.github.io/weather/build/icon/logo.png" alt="" />
       </div>
       <Card />
     </div>

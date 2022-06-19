@@ -28,7 +28,7 @@ const Card = () => {
       <div className={styles.card}>
         <div className={styles.icon}>
           {/* <img src={`/public/icon/${state.wea_img}l.png`} alt="" /> */}
-          <img src={`/public/icon/${state.wea_img}${time.num > 21 ? 'd' : 'l'}.png`} alt="" />
+          <img src={`https://riddle1981.github.io/weather/build/icon/${state.wea_img}${time.num > 21 ? 'd' : 'l'}.png`} alt="" />
         </div>
         <div className={styles.city}>{state.city}</div>
 

@@ -1,6 +1,6 @@
 {
   "postcssrc": true,
-  "publicPath": "https://riddle1981.github.io/weather/build/",
+  "publicPath": "./",
   "plugins": [
     [
       "build-plugin-moment-locales",

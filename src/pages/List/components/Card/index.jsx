@@ -25,16 +25,16 @@ const Card = () => {
     <div className={styles.container}>
       <div className={styles.icon}>
         {/* <img src={`/public/icon/${state.wea_img}l.png`} alt="" /> */}
-        <img src={`/public/icon/${state.wea_img}${time.num > 21 ? 'd' : 'l'}.png`} alt="" />
+        <img src={`https://riddle1981.github.io/weather/build/icon/${state.wea_img}${time.num > 21 ? 'd' : 'l'}.png`} alt="" />
       </div>
       <div
         className={styles.back}
         onClick={() => {
-          history.push('/card');
+          history.push('/');
         }}
       >
         {/* <img src={`/public/icon/${state.wea_img}l.png`} alt="" /> */}
-        <img src={`/public/icon/back.png`} alt="" />
+        <img src={`https://riddle1981.github.io/weather/build/icon/back.png`} alt="" />
       </div>
       <div className={styles.city}>{state.city}</div>
       <div className={styles.temperature}>
@@ -44,21 +44,21 @@ const Card = () => {
       <div className={styles.info}>
         <div className={styles.infoBox1}>
           <div className={styles.infoIcon}>
-            <img src="/public/icon/jsl.png" alt="" />
+            <img src="https://riddle1981.github.io/weather/build/icon/jsl.png" alt="" />
           </div>
           {/* <div className={styles.infoLeft}>降水量</div> */}
           <div className={styles.infoRight}>6%</div>
         </div>
         <div className={styles.infoBox2}>
           <div className={styles.infoIcon}>
-            <img src="/public/icon/humidity.png" alt="" />
+            <img src="https://riddle1981.github.io/weather/build/icon/humidity.png" alt="" />
           </div>
           {/* <div className={styles.infoLeft}>湿度</div> */}
           <div className={styles.infoRight}>{state.humidity}</div>
         </div>
         <div className={styles.infoBox3}>
           <div className={styles.infoIcon}>
-            <img src="/public/icon/wind.png" alt="" />
+            <img src="https://riddle1981.github.io/weather/build/icon/wind.png" alt="" />
           </div>
           {/* <div className={styles.infoLeft}>风速</div> */}
           <div className={styles.infoRight}>{state.win_meter}</div>

@@ -11,7 +11,7 @@ const List = () => {
         <div className={styles.weekBox}>
           <div className={styles.week}>{x.week}</div>
           <div className={styles.wea}>
-            <img src={`/public/icon/${state.wea_img}l.png`} alt="" />
+            <img src={`https://riddle1981.github.io/weather/build/icon/${state.wea_img}l.png`} alt="" />
           </div>
           <div className={styles.tem}>
             <span>{x.tem}</span>
