@@ -2,32 +2,33 @@ import React, { useEffect, useState } from 'react';
 import { Button } from '@alifd/next';
 import styles from './index.module.less';
 import store from '@/store';
+import { Link, useHistory } from 'ice';
 const { Provider } = store;
 
 const Card = () => {
   const [state, stateDispatcher] = store.useModel('list');
+  const history = useHistory();
   const [time, timeDispatcher] = useState({
     num: 0,
-    timeText: ''
-  })
+    timeText: '',
+  });
   useEffect(() => {
-    let date = new Date()
-    let hour = date.getHours()
-    let timeText = hour > 12 ? hour - 12 + 'pm' : hour + 'am'
+    let date = new Date();
+    let hour = date.getHours();
+    let timeText = hour > 12 ? hour - 12 + 'pm' : hour + 'am';
     timeDispatcher({
       num: hour,
-      timeText
-    })
+      timeText,
+    });
     // stateDispatcher.getWeather();
-    stateDispatcher.getSeven();
-
+    // stateDispatcher.getSeven();
   }, []);
   return (
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles.icon}>
           {/* <img src={`/public/icon/${state.wea_img}l.png`} alt="" /> */}
-          <img src={`/public/icon/${state.wea_img}${time.num > 21 ? 'd' : 'l' }.png`} alt="" />
+          <img src={`/public/icon/${state.wea_img}${time.num > 21 ? 'd' : 'l'}.png`} alt="" />
         </div>
         <div className={styles.city}>{state.city}</div>
 
@@ -48,7 +49,14 @@ const Card = () => {
             <div className={styles.cloud}>{state.win}</div>
           </div>
         </div>
-        <div className={styles.button}>详情</div>
+        <div
+          className={styles.button}
+          onClick={() => {
+            history.push('/list');
+          }}
+        >
+          详情
+        </div>
       </div>
       <div className={styles.info}>
         <div className={styles.infoBox}>

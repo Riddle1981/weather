@@ -27,7 +27,7 @@ export default {
   },
   reducers: {
     updateSeven(prevState, payload) {
-      let { air, city, tem, wea, win, wea_img, update_time } = payload
+      let {  city, tem, wea, win, wea_img, update_time } = payload
       prevState = Object.assign(prevState, payload)
       prevState.wea_img = dic[wea_img]
       // prevState.city = payload

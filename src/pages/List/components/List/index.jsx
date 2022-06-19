@@ -3,14 +3,28 @@ import styles from './index.module.less';
 import store from '@/store';
 const { Provider } = store;
 
-const Card = () => {
+const List = () => {
   const [state, stateDispatcher] = store.useModel('list');
-  useEffect(() => {
-    stateDispatcher.getSeven();
-  }, []);
+  function renderWeek() {
+    return state?.weekList?.map((x) => {
+      return (
+        <div className={styles.weekBox}>
+          <div className={styles.week}>{x.week}</div>
+          <div className={styles.wea}>
+            <img src={`/public/icon/${state.wea_img}l.png`} alt="" />
+          </div>
+          <div className={styles.tem}>
+            <span>{x.tem}</span>
+            <span className={styles.grey}>{x.tem1}</span>
+          </div>
+        </div>
+      );
+    })
+  }
+
   return (
-    <div className={styles.container}>
-     
+    <div className={styles.weekList}>
+      {renderWeek()}
     </div>
   );
 };
@@ -18,7 +32,7 @@ const Card = () => {
 export default () => {
   return (
     <Provider>
-      <Card />
+      <List />
     </Provider>
   );
 };
