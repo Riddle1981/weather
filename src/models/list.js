@@ -23,14 +23,34 @@ export default {
     win_meter: '',
     humidity: '',
     time_img: 'l',
-    update_time: ''
+    update_time: '',
+    weekList: [],
+    hours: []
   },
   reducers: {
-    updateSeven(prevState, payload) {
-      let { air, city, tem, wea, win, wea_img, update_time } = payload
+    updateWeather(prevState, payload) {
+      let { air, city, tem, wea, win, wea_img, update_time, hours} = payload
       prevState = Object.assign(prevState, payload)
       prevState.wea_img = dic[wea_img]
-      // prevState.city = payload
+      prevState.hours = hours.map(x => {
+        return {
+          hours: x.hours,
+          tem: x.tems
+        }
+      })
+      prevState.tem = tem.replace('℃', '')
+      // console.log(prevState, 'payload')
+    },
+    updateSeven(prevState, payload) {
+      let data = payload?.map(x => {
+        return {
+          tem: x.tem,
+          tem1: x.tem1,
+          week: x.week,
+          wea_img: dic[x.wea_img]
+        }
+      })
+      prevState.weekList = data
     }
   },
   effects: (dispatch) => ({
@@ -46,7 +66,8 @@ export default {
           },
         })
         .then((res) => {
-          dispatch.card.updateSeven(res)
+          dispatch.list.updateWeather(res.data?.[0])
+          dispatch.list.updateSeven(res.data)
         });
     }
   })

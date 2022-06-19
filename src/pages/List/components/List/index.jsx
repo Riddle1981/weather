@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styles from './index.module.less';
-import store from '@/pages/List/store';
+import store from '@/store';
+const { Provider } = store;
 
 const Card = () => {
   const [state, stateDispatcher] = store.useModel('list');
   useEffect(() => {
-    console.log('hello')
     stateDispatcher.getSeven();
   }, []);
   return (
@@ -15,4 +15,10 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default () => {
+  return (
+    <Provider>
+      <Card />
+    </Provider>
+  );
+};

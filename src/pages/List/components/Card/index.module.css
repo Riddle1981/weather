@@ -4,94 +4,31 @@
   transform: translateX(-50%);
   bottom: 100px;
 }
-.card {
-  position: relative;
-  width: 230px;
-  height: 247px;
-  /* margin-top: 200px; */
-  background: #fbfbfb;
-  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.25);
-  border-radius: 30px;
-  box-sizing: border-box;
-  padding: 79px 18px 0 18px;
-}
 .icon {
   position: absolute;
-  top: -51px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 122px;
-  height: 120px;
+  top: 39px;
+  right: 16px;
+  width: 100px;
+  height: 100px;
 }
 .icon img {
   width: 100%;
   height: 100%;
   display: block;
 }
-.button {
-  position: absolute;
-  bottom: -24px;
-  width: 163px;
-  height: 48px;
-  line-height: 48px;
-  vertical-align: middle;
-  left: 50%;
-  transform: translate(-50%);
-  background: #5e4fc1;
-  border-radius: 18px;
-  align-items: center;
-  font-family: 'Alegreya Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  text-align: center;
-  color: #fff;
-}
-.info {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.infoBox {
-  height: 34px;
-  width: 163px;
-  font-family: 'Alegreya Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  /* line-height: 22px; */
-  /* identical to box height */
-  color: #fff;
-}
-.infoLeft {
-  float: left;
-}
-.infoRight {
-  float: right;
-}
 .city {
-  position: relative;
   font-family: 'Alegreya Sans';
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 30px;
+  line-height: 36px;
   color: #332821;
-  text-align: center;
 }
-.cardContent {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 25px;
-}
-.leftBox .temperature {
+.temperature {
   font-family: 'Alegreya Sans';
   font-style: normal;
   font-weight: 700;
-  font-size: 64px;
+  font-size: 96px;
   line-height: 1;
   margin: 0;
   padding: 0;
@@ -99,60 +36,11 @@
   /* identical to box height */
   color: #332821;
 }
-.leftBox .temperature .num {
+.temperature .num {
   vertical-align: text-top;
 }
-.leftBox .temperature .sign {
+.temperature .sign {
   font-weight: 500;
   font-size: 14px;
   vertical-align: text-top;
-}
-.leftBox .timeInfo {
-  font-family: 'Alegreya Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 17px;
-  /* identical to box height */
-  color: rgba(51, 40, 33, 0.5);
-}
-.tag {
-  font-family: 'Alegreya Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 10px;
-  text-align: center;
-  color: #fff;
-  height: 16px;
-  line-height: 16px;
-  vertical-align: middle;
-}
-.rightBox .wind {
-  font-family: 'Alegreya Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 10px;
-  text-align: center;
-  color: #fff;
-  height: 16px;
-  line-height: 16px;
-  vertical-align: middle;
-  width: 72px;
-  background: rgba(212, 66, 111, 0.5);
-  border-radius: 20px;
-}
-.rightBox .cloud {
-  font-family: 'Alegreya Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 10px;
-  text-align: center;
-  color: #fff;
-  line-height: 16px;
-  vertical-align: middle;
-  margin-top: 6px;
-  width: 50px;
-  height: 16px;
-  background: rgba(106, 117, 186, 0.5);
-  border-radius: 20px;
 }

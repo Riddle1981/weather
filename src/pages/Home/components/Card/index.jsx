@@ -5,7 +5,7 @@ import store from '@/store';
 const { Provider } = store;
 
 const Card = () => {
-  const [state, stateDispatcher] = store.useModel('card');
+  const [state, stateDispatcher] = store.useModel('list');
   const [time, timeDispatcher] = useState({
     num: 0,
     timeText: ''
@@ -18,15 +18,16 @@ const Card = () => {
       num: hour,
       timeText
     })
-    stateDispatcher.getWeather();
+    // stateDispatcher.getWeather();
+    stateDispatcher.getSeven();
+
   }, []);
   return (
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles.icon}>
-          {/* <img src={`/public/icon/1l.png`} alt="" /> */}
-          <img src={`/public/icon/${state.wea_img}l.png`} alt="" />
-          {/* <img src={`/public/icon/${state.wea_img}${time.num > 12 ? 'l' : 'd' }.png`} alt="" /> */}
+          {/* <img src={`/public/icon/${state.wea_img}l.png`} alt="" /> */}
+          <img src={`/public/icon/${state.wea_img}${time.num > 21 ? 'd' : 'l' }.png`} alt="" />
         </div>
         <div className={styles.city}>{state.city}</div>
 

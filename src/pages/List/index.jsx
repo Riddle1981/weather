@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { ResponsiveGrid } from '@alifd/next';
 import List from './components/List';
+import Card from './components/Card';
 import styles from './index.module.less';
 import store from '@/pages/List/store';
 
 const Seven = () => {
   return (
-    <div className={styles.homeContainer}>
+    <div className={styles.ListContainer}>
+      <Card />
       <List />
     </div>
   );
